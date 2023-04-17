@@ -1,0 +1,115 @@
+.navbar {
+    background-color: #04050e;
+    height:50px;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    background:none;
+}
+
+.menu-close {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    background:none;
+}
+
+.form {
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.nav-menu {
+    background-color: #04050e;
+    width: 250px;
+    height:100vh; 
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top:10px;
+    left: -100%;
+    transition: 850ms;
+}
+
+.nav-menu.active {
+    left: -30px;
+    transition:350ms;
+}
+
+.nav-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style:none;
+    height: 80px;
+}
+
+.nav-text a {
+    text-decoration:none;
+    color: #f5f5f5;
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+
+.nav-text a:hover {
+    background-color: #1a83ff;
+    height: 60%;
+}
+
+.nav-menu-items {
+    width: 100%;
+}
+
+.nav-toggle {
+     background-color: #060b26;
+     width: 100%;
+     height: 80px;
+     display: flex;
+     justify-items: start;
+     align-items: center;
+}
+
+span {
+    margin-left: 10px;
+}
+
+.links {
+    text-decoration: none;
+    position: relative;
+    left: -20px
+}
+
+.errmsg {
+    color:red;
+}
+
+.app-check {
+    height: 10px;
+    width: 10px;
+    margin: 1%;
+}
+
+.information {
+    position: static;
+    border-top: 100%;
+}
+
+.log {
+    color:red;
+}
+
+
