@@ -80,7 +80,7 @@ function Home() {
       >
         <HashLoader color="#fafa" loading={loading} size={120} />
         <p className="w-1/3 text-center text-white mt-10">
-          This may take a few seconds, please don't close this page.
+          This may take a few seconds, please don't close this page. asdasd
         </p>
       </div>
 
