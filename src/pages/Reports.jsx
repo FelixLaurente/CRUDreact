@@ -143,6 +143,18 @@ function Reports() {
 
   return (
     <>
+      <div
+        className={
+          "fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-800 opacity-70 flex flex-col items-center justify-center " +
+          (!loading && "hidden")
+        }
+      >
+        <HashLoader color="#fafa" loading={loading} size={120} />
+        <p className="w-1/3 text-center text-white mt-10">
+          This may take a few seconds, please don't close this page.
+        </p>
+      </div>
+
       <div>
         <IconContext.Provider value={{ color: "#fff" }}>
           <div className="navbar mb-3">
@@ -174,21 +186,6 @@ function Reports() {
         </IconContext.Provider>
       </div>
 
-
-
-      <>
-      {loading ? (
-            <HashLoader
-              color={"#381dbf"}
-              loading={loading}
-              // cssOverride={override}
-              size={100}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-              
-            />
-          ) : (
-
       <div className="container">
         <Table striped bordered hover className="table table-striped">
           <thead>
@@ -213,26 +210,28 @@ function Reports() {
                   <td> {val.position} </td>
                   <td> {val.wage} </td>
                   <td>
-                    <Link
-                      to="#"
-                      className="ai"
-                      onClick={() => {
-                        deleteEmployee(val.id);
-                        deletes();
-                      }}
-                    >
-                      <AiIcons.AiFillDelete />
-                    </Link>
+                    <div className="flex">
+                      <Link
+                        to="#"
+                        className="ai"
+                        onClick={() => {
+                          deleteEmployee(val.id);
+                          deletes();
+                        }}
+                      >
+                        <AiIcons.AiFillDelete />
+                      </Link>
 
-                    <Link
-                      to="#"
-                      className="ai"
-                      onClick={() => {
-                        editButton(val);
-                      }}
-                    >
-                      <MdIcons.MdOutlineSecurityUpdateGood />
-                    </Link>
+                      <Link
+                        to="#"
+                        className="ai"
+                        onClick={() => {
+                          editButton(val);
+                        }}
+                      >
+                        <MdIcons.MdOutlineSecurityUpdateGood />
+                      </Link>
+                    </div>
                   </td>
                 </tr>
               );
@@ -361,12 +360,6 @@ function Reports() {
           theme="light"
         />
       </div>
-       )}
-      </>
-
-
-
-
     </>
   );
 }

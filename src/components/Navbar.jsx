@@ -46,7 +46,7 @@ function Navbar() {
             <Link to="#" className="menu-close">
               <AiIcons.AiOutlineClose />
             </Link>
-            <Button>ASDASD</Button>
+          
           </li>
 
           {SidebarData.map((item, index) => {

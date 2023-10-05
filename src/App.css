@@ -49,8 +49,6 @@
     position: relative;
   }
 
-
-
   button:hover {
     cursor: pointer;
   }
@@ -62,5 +60,7 @@
 
   .ai {
     position: relative;
-    left: 20px;
+    left: 30px;
   }
+
+  

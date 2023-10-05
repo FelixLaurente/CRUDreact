@@ -10,6 +10,7 @@ import { Button } from "react-bootstrap";
 import HashLoader from "react-spinners/HashLoader";
 
 function Home() {
+
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -17,6 +18,8 @@ function Home() {
       setLoading(false);
     }, 5000);
   }, []);
+
+
   const usenavigate = useNavigate();
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
@@ -34,9 +37,7 @@ function Home() {
   };
 
   return (
-    
     <div>
-      
       <IconContext.Provider value={{ color: "#fff" }}>
         <div className="navbar mb-3">
           <Link to="#" className="menu-bars">
@@ -71,24 +72,23 @@ function Home() {
         </nav>
       </IconContext.Provider>
 
-      <>
-     
+      <div
+        className={
+          "fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-gray-800 opacity-70 flex flex-col items-center justify-center " +
+          (!loading && "hidden")
+        }
+      >
+        <HashLoader color="#fafa" loading={loading} size={120} />
+        <p className="w-1/3 text-center text-white mt-10">
+          This may take a few seconds, please don't close this page.
+        </p>
+      </div>
 
-        <div className="home">
-          {loading ? (
-            <HashLoader
-              color={"#381dbf"}
-              loading={loading}
-              // cssOverride={override}
-              size={100}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
-          ) : (
+      <div className="home">
+         
             <h1>Home</h1>
-          )}
+      
         </div>
-      </>
     </div>
   );
 }
